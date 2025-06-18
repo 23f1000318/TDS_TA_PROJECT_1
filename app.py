@@ -204,6 +204,3 @@ async def query_knowledge_base(request: QueryRequest) -> QueryResponse:
     except Exception:
         logging.error("Error in /api/", exc_info=True)
         return QueryResponse(answer="⚠ Failed to get an answer.", links=[])
-
-    finally:
-        conn.close()
